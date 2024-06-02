@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="ECommerceSystem.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>E-Commerce System</title>
+
+    <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/header.css" rel="stylesheet" />
+    <link href="~/css/utilities.css" rel="stylesheet" />
+
+    <style>
+        body { background-color: #f3f4f6; }
+    </style>
+
+     <asp:ContentPlaceHolder ID="Head" runat="server" />
+</head>
+<body>
+    <form id="admin" enctype="multipart/form-data" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">ECommerce System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="/Admin/Product/Products.aspx">
+                      Products
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Admin/Category/Categories.aspx">
+                      Categories
+                  </a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      Orders
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="~/Admin/Users.aspx">
+                      Users
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-4">
+                     <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+
+     <asp:ContentPlaceHolder ID="Javascript" runat="server" />
+</body>
+</html>
