@@ -177,10 +177,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\CartItems.aspx" />
     <Content Include="Account\CartList.aspx" />
-    <Content Include="Account\OrderItems.aspx" />
-    <Content Include="Account\Orders.aspx" />
+    <Content Include="Account\CheckOut.aspx" />
+    <Content Include="Account\OrderDetail.aspx" />
+    <Content Include="Account\OrderList.aspx" />
     <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\CreateCategory.aspx" />
     <Content Include="Admin\EditCategory.aspx" />
@@ -231,13 +231,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\CartItems.aspx.cs">
-      <DependentUpon>CartItems.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\CartItems.aspx.designer.cs">
-      <DependentUpon>CartItems.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Account\CartList.aspx.cs">
       <DependentUpon>CartList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,19 +238,26 @@
     <Compile Include="Account\CartList.aspx.designer.cs">
       <DependentUpon>CartList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\OrderItems.aspx.cs">
-      <DependentUpon>OrderItems.aspx</DependentUpon>
+    <Compile Include="Account\CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\OrderItems.aspx.designer.cs">
-      <DependentUpon>OrderItems.aspx</DependentUpon>
+    <Compile Include="Account\CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Orders.aspx.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
+    <Compile Include="Account\OrderDetail.aspx.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Orders.aspx.designer.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
+    <Compile Include="Account\OrderDetail.aspx.designer.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Categories.aspx.cs">
       <DependentUpon>Categories.aspx</DependentUpon>

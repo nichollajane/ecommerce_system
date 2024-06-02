@@ -43,6 +43,7 @@
                   </a>
                   <ul class="dropdown-menu text-small" style="">
                     <li><a class="dropdown-item" href="/Account/CartList.aspx">Cart</a></li>
+                    <li><a class="dropdown-item" href="/Account/OrderList.aspx">Orders</a></li>
                     <li><a class="dropdown-item" href="#">Account</a></li>
                     <li>
                         <asp:Button ID="SignoutButton" runat="server" Text="Sign out" CssClass="dropdown-item" OnClick="SignoutButton_Click" />

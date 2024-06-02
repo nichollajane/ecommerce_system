@@ -47,7 +47,11 @@
                         />
                     </div>
 
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-between">
+                        <a href='/Account/CheckOut.aspx?Cart_ID=<%# Eval("Cart_ID") %>' class="btn btn-sm btn-success">
+                            Check Out
+                        </a>
+
                         <asp:Button 
                             ID="RemoveCartButton" 
                             runat="server" 

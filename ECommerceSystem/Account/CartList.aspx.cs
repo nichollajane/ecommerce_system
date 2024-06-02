@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using ECommerceSystem;
 using ECommerceSystem.Database;
 using System.Web.Security;
 
@@ -23,6 +19,14 @@ namespace ECommerceSystem.Account
 
             CartsRepeater.DataSource = carts;
             CartsRepeater.DataBind();
+        }
+
+        protected void CheckOutButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string argument = button.CommandArgument;
+           
+            Response.Redirect("~/Account/CheckOut.aspx?Cart_ID=" + argument);
         }
 
         protected void RemoveCartButton_Click(object sender, EventArgs e)

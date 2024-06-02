@@ -17,20 +17,26 @@ namespace ECommerceSystem.Database
                 sqlConnection.Open();
 
                 string sql = @"
-                    INSERT INTO Order (
+                    INSERT INTO Order_Item (
+                        Order_ID,
+                        Product_ID,
                         Order_Quantity, 
                         Unit_Price, 
                         Total_Price 
                      ) 
                     VALUES (
+                        @Order_ID,
+                        @Product_ID,
                         @Order_Quantity, 
                         @Unit_Price, 
-                        @Total_Price, 
+                        @Total_Price
                     );
                 ";
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConnection);
 
+                cmd.Parameters.AddWithValue("@Order_ID", orderitem.Order_ID);
+                cmd.Parameters.AddWithValue("@Product_ID", orderitem.Product_ID);
                 cmd.Parameters.AddWithValue("@Order_Quantity", orderitem.Order_Quantity);
                 cmd.Parameters.AddWithValue("@Unit_Price", orderitem.Unit_Price);
                 cmd.Parameters.AddWithValue("@Total_Price", orderitem.Total_Price);
@@ -49,11 +55,10 @@ namespace ECommerceSystem.Database
                 sqlConnection.Open();
 
                 string sql = @"
-                    UPDATE Order SET
+                    UPDATE Order_Item SET
                     Order_Quantity = Order_Quantity, 
                     Unit_Price = Unit_Price,
                     Total_Price = Total_Price
-
                     WHERE Order_Item_ID = @Order_Item_ID;
                 ";
 
@@ -126,15 +131,17 @@ namespace ECommerceSystem.Database
             }
         }
 
-        public List<OrderItem> GetOrderItems()
+        public List<OrderItem> GetOrderItems(int Order_ID)
         {
-            List<OrderItem> orderitems = new List<OrderItem>();
+            List<OrderItem> orderItems = new List<OrderItem>();
 
             using (SqlConnection sqlConnection = connection.connect())
             {
                 sqlConnection.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM OrderItem", sqlConnection);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Order_Item INNER JOIN Product ON Order_Item.Product_ID = Product.Product_ID WHERE Order_ID = @Order_ID", sqlConnection);
+
+                cmd.Parameters.AddWithValue("@Order_ID", Order_ID);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -142,16 +149,35 @@ namespace ECommerceSystem.Database
                 {
                     while (reader.Read())
                     {
-                        OrderItem orderitem = new OrderItem();
+                        OrderItem orderItem = new OrderItem();
 
-                        orderitem.Order_Item_ID = (int)reader["Order_Item_ID"];
-                        orderitem.Order_ID = (int)reader["Order_ID"];
-                        orderitem.Product_ID = (int)reader["Product-ID"];
-                        orderitem.Order_Quantity = (int)reader["Order_Quantity"];
-                        orderitem.Unit_Price = (decimal)reader["Unit_Price"];
-                        orderitem.Total_Price = (decimal)reader["Total_Price"];
+                        int quantity = (int)reader["Quantity"];
+                        decimal price = (decimal)reader["Product_Price"];
 
-                        orderitems.Add(orderitem);
+                        orderItem.Order_Item_ID = (int)reader["Order_Item_ID"];
+                        orderItem.Order_ID = (int)reader["Order_ID"];
+                        orderItem.Product_ID = (int)reader["Product-ID"];
+                        orderItem.Order_Quantity = (int)reader["Order_Quantity"];
+                        orderItem.Unit_Price = (decimal)reader["Unit_Price"];
+                        orderItem.Total_Price = (decimal)reader["Total_Price"];
+                        orderItem.Product_ID = (int)reader["Product_ID"];
+                        orderItem.Product_Name = reader["Product_Name"].ToString();
+                        orderItem.Product_SKU = reader["Product_SKU"].ToString();
+                        orderItem.Product_Description = reader["Product_Description"].ToString();
+                        orderItem.Product_Price = price;
+                        orderItem.Product_Brand = reader["Product_Brand"].ToString();
+                        orderItem.Product_Availability = reader["Product_Availability"].ToString();
+                        orderItem.Product_Quantity = (int)reader["Product_Quantity"];
+                        orderItem.Product_Color = reader["Product_Color"].ToString();
+                        orderItem.Product_Size = reader["Product_Size"].ToString();
+
+                        byte[] bytes = (byte[])reader["Product_Image"];
+                        string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+                        orderItem.Product_Image_Url = "data:image/png;base64," + base64String;
+                        orderItem.Total_Price = price * quantity;
+
+                        orderItems.Add(orderItem);
                     }
                 }
                 catch (SqlException exception)
@@ -164,7 +190,7 @@ namespace ECommerceSystem.Database
                 }
             }
 
-            return orderitems;
+            return orderItems;
         }
 
         public void Delete(OrderItem orderitem)

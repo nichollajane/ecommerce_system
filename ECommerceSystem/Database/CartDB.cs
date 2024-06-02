@@ -156,7 +156,7 @@ namespace ECommerceSystem.Database
             return null;
         }
 
-        public List<Cart> GetCarts(int User_ID)
+        public List<Cart> GetCarts(int User_ID, Cart cart = null)
         {
             List<Cart> carts = new List<Cart>();
 
@@ -164,9 +164,21 @@ namespace ECommerceSystem.Database
             {
                 sqlConnection.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Cart INNER JOIN Product ON Cart.Product_ID = Product.Product_ID WHERE User_ID = @User_ID", sqlConnection);
+                string sql = "SELECT * FROM Cart INNER JOIN Product ON Cart.Product_ID = Product.Product_ID WHERE User_ID = @User_ID";
+
+                if (cart != null)
+                {
+                    sql += " AND Cart_ID = @Cart_ID";
+                }
+
+                SqlCommand cmd = new SqlCommand(sql, sqlConnection);
 
                 cmd.Parameters.AddWithValue("@User_ID", User_ID);
+
+                if (cart != null)
+                {
+                    cmd.Parameters.AddWithValue("@Cart_ID", cart.Cart_ID);
+                }
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -174,16 +186,19 @@ namespace ECommerceSystem.Database
                 {
                     while (reader.Read())
                     {
-                        Cart cart = new Cart();
+                        cart = new Cart();
+
+                        int quantity = (int)reader["Quantity"];
+                        decimal price = (decimal)reader["Product_Price"];
 
                         cart.Cart_ID = (int)reader["Cart_ID"];
                         cart.User_ID = (int)reader["User_ID"];
-                        cart.Quantity = (int)reader["Quantity"];
+                        cart.Quantity = quantity;
                         cart.Product_ID = (int)reader["Product_ID"];
                         cart.Product_Name = reader["Product_Name"].ToString();
                         cart.Product_SKU = reader["Product_SKU"].ToString();
                         cart.Product_Description = reader["Product_Description"].ToString();
-                        cart.Product_Price = (decimal)reader["Product_Price"];
+                        cart.Product_Price = price;
                         cart.Product_Brand = reader["Product_Brand"].ToString();
                         cart.Product_Availability = reader["Product_Availability"].ToString();
                         cart.Product_Quantity = (int)reader["Product_Quantity"];
@@ -194,6 +209,7 @@ namespace ECommerceSystem.Database
                         string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
 
                         cart.Product_Image_Url = "data:image/png;base64," + base64String;
+                        cart.Total_Price = price * quantity;
 
                         carts.Add(cart);
                     }

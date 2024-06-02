@@ -15,5 +15,7 @@ namespace ECommerceSystem.Models
         public DateTime Date_Created { get; set; }
 
         public DateTime Last_Update { get; set; }
+
+        public Decimal Total_Price { get; set; }
     }
 }
