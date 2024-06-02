@@ -6,7 +6,7 @@
     </div>
 
     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        <asp:Repeater ID="CartsRepeater" runat="server">
+        <asp:Repeater ID="CartsRepeater" runat="server" OnItemCommand="CartsRepeater_ItemCommand">
             <ItemTemplate>
                 <div class="group relative">
                     <div 
@@ -15,6 +15,7 @@
                     >
                         <img src='<%# Eval("Product_Image_Url") %>' alt='<%# Eval("Product_Name") %>' class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                     </div>
+
                     <div class="mt-4 flex justify-between">
                         <div>
                         <p class="text-gray-700">
@@ -27,9 +28,23 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <button class="btn btn-primary" type="button" onclick="decrementValue()">-</button>
-                        <asp:TextBox ID="Quantity" runat="server" TextMode="Number" AutoPostBack="false" CssClass="form-control text-center" Value='<%# Eval("Quantity") %>'></asp:TextBox>
-                        <button class="btn btn-primary" type="button" onclick="incrementValue()" dir="ltr">+</button>
+                        <asp:Button 
+                            ID="DecrementQuantityButton" 
+                            runat="server" 
+                            Text="-" 
+                            CssClass="btn btn-primary" 
+                            CommandArgument='<%# Eval("Cart_ID") %>'
+                            OnClick="DecrementQuantityButton_Click"
+                        />
+                        <asp:TextBox ID="Quantity" runat="server" TextMode="Number" ReadOnly="true" AutoPostBack="false" CssClass="form-control text-center" Value='<%# Eval("Quantity") %>'></asp:TextBox>
+                        <asp:Button 
+                            ID="IncrementQuantityButton" 
+                            runat="server" 
+                            Text="+" 
+                            CssClass="btn btn-primary" 
+                            CommandArgument='<%# Eval("Cart_ID") %>'
+                            OnClick="IncrementQuantityButton_Click"
+                        />
                     </div>
 
                     <div class="d-flex justify-content-end">
@@ -46,13 +61,4 @@
             </ItemTemplate>
         </asp:Repeater>
     </div>
-</asp:Content>
-
-
-<asp:Content ID="Scripts" ContentPlaceHolderID="Scripts" runat="server">
-    <script>
-        function viewProduct(productId) {
-            window.location.href = "/ProductDetails.aspx?Product_Id=" + productId;
-        }
-    </script>
 </asp:Content>

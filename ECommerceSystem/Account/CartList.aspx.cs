@@ -37,7 +37,47 @@ namespace ECommerceSystem.Account
             Response.Redirect("~/Account/CartList.aspx");
         }
 
-        protected void AddQuantity_Click(object sender, EventArgs e)
+        protected void IncrementQuantityButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string argument = button.CommandArgument;
+
+            cart.Cart_ID = int.Parse(argument);
+
+            cart = cartDB.Get(cart.Cart_ID);
+
+            UpdateQuantity(cart, "increment");
+        }
+
+        protected void DecrementQuantityButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string argument = button.CommandArgument;
+
+            cart.Cart_ID = int.Parse(argument);
+
+            cart = cartDB.Get(cart.Cart_ID);
+
+            UpdateQuantity(cart, "decrement");
+        }
+
+        protected void UpdateQuantity(Models.Cart cart, string type)
+        {
+            if (type == "increment")
+            {
+                cart.Quantity += 1;
+            }
+            else
+            {
+               cart.Quantity -= 1;
+            }
+
+            cartDB.Update(cart);
+
+            Response.Redirect("~/Account/CartList.aspx");
+        }
+
+        protected void CartsRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
 
         }
