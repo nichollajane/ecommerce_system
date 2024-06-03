@@ -15,6 +15,8 @@ namespace ECommerceSystem.Account
 
             User user = userDB.Get(int.Parse(ticket.Name));
 
+            ViewState["User_ID"] = user.User_ID;
+
             FullName.Text = user.Fullname;
             Email.Text = user.Email;
             Password.Text = user.Password;
@@ -28,11 +30,40 @@ namespace ECommerceSystem.Account
             Region.Text = user.Region;
             Country.Text = user.Country;
             Zipcode.Text = "" + user.Zipcode;
+
+            if (!String.IsNullOrEmpty(Password.Text))
+            {
+                ConfirmPasswordError.Enabled = false;
+            }
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
+            User user = userDB.Get((int)ViewState["User_ID"]);
 
+            user.Fullname = FullName.Text;
+            user.Email = Email.Text;
+            user.Contact_No = int.Parse(ContactNo.Text);
+            user.Gender = Gender.Text;
+            user.Home_No = HomeNo.Text;
+            user.Street = Street.Text;
+            user.City = City.Text;
+            user.Municipality = Municipality.Text;
+            user.Region = Region.Text;
+            user.Country = Country.Text;
+            user.Zipcode = int.Parse(Zipcode.Text);
+            user.User_Type = user.User_Type;
+            user.Barangay = Barangay.Text;
+
+            // If password is blank then don't update it
+            if (Password.Text == null)
+            {
+                user.Password = user.Password;
+            }
+
+            userDB.Update(user);
+
+            Response.Redirect("/");
         }
     }
 }
