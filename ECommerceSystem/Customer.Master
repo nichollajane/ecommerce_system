@@ -20,14 +20,14 @@
         <header class="p-3 mb-3 border-bottom">
             <div class="container">
               <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mr-4 mb-lg-0 link-body-emphasis text-decoration-none">
+                <a href="/" class="d-flex align-items-center mb-2 mr-6 mb-lg-0 link-body-emphasis text-decoration-none">
                     <img src="/img/logo.png" width="40" height="32" />
                 </a>
 
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                  <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-                  <li><a href="/ProductList.aspx" class="nav-link px-2 link-body-emphasis">Products</a></li>
-                  <li><a href="#" class="nav-link px-2 link-body-emphasis">Shop by Category</a></li>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ml-4">
+                  <li><a href="/" class="nav-link px-2 link-dark font-medium">Home</a></li>
+                  <li><a href="/ProductList.aspx" class="nav-link px-2 link-dark font-medium">Products</a></li>
+                  <li><a href="/CategoryList.aspx" class="nav-link px-2 link-dark font-medium">Shop by Category</a></li>
                 </ul>
 
                 <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="dropdown text-end">
-                  <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a href="#" class="d-block link-dark font-bold text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <asp:Label 
                         ID="Fullname"
                         runat="server"

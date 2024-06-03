@@ -30,11 +30,6 @@ namespace ECommerceSystem.Account
             Region.Text = user.Region;
             Country.Text = user.Country;
             Zipcode.Text = "" + user.Zipcode;
-
-            if (!String.IsNullOrEmpty(Password.Text))
-            {
-                ConfirmPasswordError.Enabled = false;
-            }
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)

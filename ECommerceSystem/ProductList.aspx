@@ -16,14 +16,12 @@
                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                         <img src='<%# Eval("Product_Image_Url") %>' alt='<%# Eval("Product_Name") %>' class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                     </div>
-                    <div class="mt-4 flex justify-between">
+                    <div class="mt-4">
                         <div>
-                        <h3 class="text-sm text-gray-700">
-                            <a href="#">
+                        <p class="text-primary font-medium">
                             <span aria-hidden="true" class="absolute inset-0"></span>
                             <%# Eval("Product_Name") %>
-                            </a>
-                        </h3>
+                        </p>
                         </div>
                         <p class="text-sm font-medium text-gray-900">
                             <%# Convert.ToDecimal(Eval("Product_Price")).ToString("₱#,##0.00") %>
