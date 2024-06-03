@@ -82,10 +82,15 @@ namespace ECommerceSystem.Database
                         Product_Availability = @Product_Availability,
                         Product_Quantity = @Product_Quantity,
                         Product_Color = @Product_Color,
-                        Product_Size = @Product_Size,
-                        Product_Image = @Product_Image
-                    WHERE Product_ID = @Product_ID
+                        Product_Size = @Product_Size
                 ";
+
+                if (product.Product_Image != null)
+                {
+                    sql += ", Product_Image = @Product_Image";
+                }
+
+                sql += " WHERE Product_ID = @Product_ID";
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConnection);
 
@@ -100,7 +105,10 @@ namespace ECommerceSystem.Database
                 cmd.Parameters.AddWithValue("@Product_Color", product.Product_Color);
                 cmd.Parameters.AddWithValue("@Product_Size", product.Product_Size);
 
-                cmd.Parameters.AddWithValue("@Product_Image", SqlDbType.Image).Value = product.Product_Image;
+                if (product.Product_Image != null)
+                {
+                    cmd.Parameters.AddWithValue("@Product_Image", SqlDbType.Image).Value = product.Product_Image;
+                }
 
                 cmd.ExecuteNonQuery();
 
@@ -181,6 +189,58 @@ namespace ECommerceSystem.Database
                 sqlConnection.Open();
 
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Product ORDER BY Product_ID DESC", sqlConnection);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                try
+                {
+                    while (reader.Read())
+                    {
+                        Product product = new Product();
+
+                        product.Product_ID = (int)reader["Product_ID"];
+                        product.Product_Name = (String)reader["Product_Name"];
+                        product.Product_SKU = (String)reader["Product_SKU"];
+                        product.Product_Description = (String)reader["Product_Description"];
+                        product.Product_Price = (decimal)reader["Product_Price"];
+                        product.Product_Brand = (String)reader["Product_Brand"];
+                        product.Product_Availability = reader["Product_Availability"].ToString();
+                        product.Product_Quantity = (int)reader["Product_Quantity"];
+                        product.Product_Color = (String)reader["Product_Color"];
+                        product.Product_Size = (String)reader["Product_Size"];
+
+                        byte[] bytes = (byte[])reader["Product_Image"];
+                        string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+                        product.Product_Image_Url = "data:image/png;base64," + base64String;
+
+                        products.Add(product);
+                    }
+                }
+                catch (SqlException exception)
+                {
+                    throw exception;
+                }
+                finally
+                {
+                    sqlConnection.Close();
+                }
+            }
+
+            return products;
+        }
+
+        public List<Product> GetProductsByCategory(int Category_ID)
+        {
+            List<Product> products = new List<Product>();
+
+            using (SqlConnection sqlConnection = connection.connect())
+            {
+                sqlConnection.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Product WHERE Category_ID = @Category_ID ORDER BY Product_ID DESC", sqlConnection);
+
+                cmd.Parameters.AddWithValue("@Category_ID", Category_ID);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 

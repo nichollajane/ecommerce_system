@@ -77,7 +77,7 @@ namespace ECommerceSystem.Admin
 
             productDB.Update(product);
 
-            Response.Redirect("~/Admin/Product/Products.aspx");
+            Response.Redirect("/Admin/Products.aspx");
         }
 
         protected void PopulateCategories()

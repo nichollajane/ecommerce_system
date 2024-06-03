@@ -15,7 +15,7 @@
                     <td class="auto-style5">
                         <asp:TextBox ID="Fullname" runat="server" Width="200px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ErrorMessage="Fullname is Required!" ForeColor="Red" ControlToValidate="User_Fullname"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ErrorMessage="Fullname is Required!" ForeColor="Red" ControlToValidate="Fullname"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style6">
                         <asp:Label ID="Label16" runat="server" Text="User Type:"></asp:Label>
@@ -37,7 +37,7 @@
                     <td class="auto-style5">
                         <asp:TextBox ID="Email" runat="server" Width="200px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ErrorMessage="Email is Required!" ForeColor="Red" ControlToValidate="User_Email"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ErrorMessage="Email is Required!" ForeColor="Red" ControlToValidate="Email"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style6">
                         <asp:Label ID="Label18" runat="server" Text="Password:"></asp:Label>
@@ -45,7 +45,7 @@
                     <td class="auto-style7">
                         <asp:TextBox ID="Password" runat="server" Width="200px" TextMode="Password"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="Password is Required!" ForeColor="Red" ControlToValidate="User_Password"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="Password is Required!" ForeColor="Red" ControlToValidate="Password"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -55,7 +55,7 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="Contact_No" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ErrorMessage="Contact Number isRequired!" ForeColor="Red" ControlToValidate="User_Contact_No"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ErrorMessage="Contact Number isRequired!" ForeColor="Red" ControlToValidate="Contact_No"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style3">
                         <asp:Label ID="Label30" runat="server" Text="Gender:"></asp:Label>
@@ -63,7 +63,7 @@
                     <td class="text-start">
                         <asp:TextBox ID="Gender" runat="server" Width="200px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ErrorMessage="User Gender is Required!" ForeColor="Red" ControlToValidate="User_Gender"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ErrorMessage="User Gender is Required!" ForeColor="Red" ControlToValidate="Gender"></asp:RequiredFieldValidator>
                         <br />
                         <br />
                     </td>
@@ -86,7 +86,7 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="Street" runat="server" Width="200px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator23" runat="server" ErrorMessage="Street is Required!" ForeColor="Red" ControlToValidate="User_Street"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator23" runat="server" ErrorMessage="Street is Required!" ForeColor="Red" ControlToValidate="Street"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style3">
                         <asp:Label ID="Label23" runat="server" Text="Home No:"></asp:Label>
@@ -94,7 +94,7 @@
                     <td class="text-start">
                         <asp:TextBox ID="Home_No" runat="server" Width="200px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ErrorMessage="Home No is Required!" ForeColor="Red" ControlToValidate="User_Home_Address"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ErrorMessage="Home No is Required!" ForeColor="Red" ControlToValidate="Home_No"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -112,7 +112,7 @@
                     <td class="text-start">
                         <asp:TextBox ID="City" runat="server" Width="200px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator25" runat="server" ErrorMessage="City is Required!" ForeColor="Red" ControlToValidate="User_City"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator25" runat="server" ErrorMessage="City is Required!" ForeColor="Red" ControlToValidate="City"></asp:RequiredFieldValidator>
                         <br />
                     </td>
                 </tr>
@@ -123,7 +123,7 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="Municipality" runat="server" Width="200px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator26" runat="server" ErrorMessage="Municipality is Required!" ForeColor="Red" ControlToValidate="User_Municipality"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator26" runat="server" ErrorMessage="Municipality is Required!" ForeColor="Red" ControlToValidate="Municipality"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style3">
                         <asp:Label ID="Label27" runat="server" Text="Region:"></asp:Label>
@@ -131,7 +131,7 @@
                     <td class="text-start">
                         <asp:TextBox ID="Region" runat="server" Width="200px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator27" runat="server" ErrorMessage="Region is Required!" ForeColor="Red" ControlToValidate="User_Region"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator27" runat="server" ErrorMessage="Region is Required!" ForeColor="Red" ControlToValidate="Region"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -141,7 +141,7 @@
                     <td class="auto-style2">
                         <asp:TextBox ID="Country" runat="server" Width="200px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator28" runat="server" ErrorMessage="Country is Required!" ForeColor="Red" ControlToValidate="User_Country"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator28" runat="server" ErrorMessage="Country is Required!" ForeColor="Red" ControlToValidate="Country"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style3">
                         <asp:Label ID="Label29" runat="server" Text="Zipcode:"></asp:Label>
@@ -149,7 +149,7 @@
                     <td class="text-start">
                         <asp:TextBox ID="Zipcode" runat="server" Width="200px" TextMode="Number"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ErrorMessage="Zipcode is Required!" ForeColor="Red" ControlToValidate="User_Zipcode"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ErrorMessage="Zipcode is Required!" ForeColor="Red" ControlToValidate="Zipcode"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

@@ -190,6 +190,7 @@
     <Content Include="Admin\EditUser.aspx" />
     <Content Include="Admin\OrderDetail.aspx" />
     <Content Include="Admin\OrderList.aspx" />
+    <Content Include="CategoryList.aspx" />
     <Content Include="css\products.css" />
     <Content Include="css\signin.css" />
     <Content Include="css\styles.css" />
@@ -333,6 +334,13 @@
     </Compile>
     <Compile Include="Admin\OrderList.aspx.designer.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer.Master.cs">
       <DependentUpon>Customer.Master</DependentUpon>

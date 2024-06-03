@@ -1,6 +1,7 @@
 ﻿using System;
 using ECommerceSystem.Models;
 using ECommerceSystem.Database;
+using System.Web;
 
 namespace ECommerceSystem.Admin
 {
@@ -31,26 +32,31 @@ namespace ECommerceSystem.Admin
         {
             category = categoryDB.Get(Category_ID);
 
-            Category_Name.Text = this.category.Category_Name;
-            Category_Description.Text = this.category.Category_Description;
+            Category_Name.Text = category.Category_Name;
+            Category_Description.Text = category.Category_Description;
 
             return category;
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            this.category.Category_ID = (int)ViewState["Category_ID"];
-            this.category.Category_Name = Category_Name.Text;
-            this.category.Category_Description = Category_Description.Text;
+            category.Category_ID = (int)ViewState["Category_ID"];
+            category.Category_Name = Category_Name.Text;
+            category.Category_Description = Category_Description.Text;
 
-            categoryDB.Update(this.category);
+            if (FileUpload.HasFile)
+            {
+                HttpPostedFile file = FileUpload.PostedFile;
+
+                byte[] imageData = new byte[FileUpload.PostedFile.ContentLength];
+                file.InputStream.Read(imageData, 0, file.ContentLength);
+
+                category.Category_Image = imageData;
+            }
+
+            categoryDB.Update(category);
 
             Response.Redirect("Categories.aspx");
-        }
-
-        protected void Category_Description_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

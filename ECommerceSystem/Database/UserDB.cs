@@ -124,28 +124,28 @@ namespace ECommerceSystem.Database
                     User_Region = @User_Region,
                     User_Country = @User_Country,
                     User_Zipcode = @User_Zipcode
-                    SELECT SCOPE_IDENTITY();
+                    WHERE @User_ID = @User_ID;
                 ";
 
-                SqlParameter[] parameters = new SqlParameter[]
-                {
-                    new SqlParameter("@User_Fullname", user.Fullname),
-                    new SqlParameter("@User_Type", user.User_Type),
-                    new SqlParameter("@User_Email", user.Email),
-                    new SqlParameter("@User_Password", user.Password),
-                    new SqlParameter("@User_Contact_No", user.Contact_No),
-                    new SqlParameter("@User_Gender", user.Gender),
-                    new SqlParameter("@User_Home_No", user.Home_No),
-                    new SqlParameter("@User_Street", user.Street),
-                    new SqlParameter("@User_Barangay", user.Barangay),
-                    new SqlParameter("@User_City", user.City),
-                    new SqlParameter("@User_Municipality", user.Municipality),
-                    new SqlParameter("@User_Region", user.Region),
-                    new SqlParameter("@User_Country", user.Country),
-                    new SqlParameter("@User_Zipcode", user.Zipcode),
-                };
+                SqlCommand cmd = new SqlCommand(sql, sqlConnection);
 
-                connection.ExecuteNonQuery(sql, parameters);
+                cmd.Parameters.AddWithValue("@User_Fullname", user.Fullname);
+                cmd.Parameters.AddWithValue("@User_Type", user.User_Type);
+                cmd.Parameters.AddWithValue("@User_Email", user.Email);
+                cmd.Parameters.AddWithValue("@User_Password", user.Password);
+                cmd.Parameters.AddWithValue("@User_Contact_No", user.Contact_No);
+                cmd.Parameters.AddWithValue("@User_Gender", user.Gender);
+                cmd.Parameters.AddWithValue("@User_Home_No", user.Home_No);
+                cmd.Parameters.AddWithValue("@User_Street", user.Street);
+                cmd.Parameters.AddWithValue("@User_Barangay", user.Barangay);
+                cmd.Parameters.AddWithValue("@User_City", user.City);
+                cmd.Parameters.AddWithValue("@User_Municipality", user.Municipality);
+                cmd.Parameters.AddWithValue("@User_Region", user.Region);
+                cmd.Parameters.AddWithValue("@User_Country", user.Country);
+                cmd.Parameters.AddWithValue("@User_Zipcode", user.Zipcode);
+                cmd.Parameters.AddWithValue("@User_ID", user.User_ID);
+
+                cmd.ExecuteNonQuery();
 
                 sqlConnection.Close();
 

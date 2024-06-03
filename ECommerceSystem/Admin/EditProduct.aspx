@@ -105,8 +105,20 @@
 
 <asp:Content ID="Javascript" ContentPlaceHolderID="Javascript" runat="server">
     <script>
-        document.onload(function () {
-            document.getElementById('upload').style = 'display: hidden';
-        })
-    </script>
+       function decrementValue() {
+           let textbox = document.getElementById('MainContent_Product_Quantity');
+           let value = parseInt(textbox.value);
+           if (value > 1) {
+               value--;
+           }
+           textbox.value = value;
+       }
+
+       function incrementValue() {
+           let textbox = document.getElementById('MainContent_Product_Quantity');
+           let value = parseInt(textbox.value);
+           value++;
+           textbox.value = value;
+       }
+   </script>
 </asp:Content>

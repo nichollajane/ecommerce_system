@@ -27,6 +27,7 @@ namespace ECommerceSystem.Database
                 cmd.Parameters.AddWithValue("@Category_Description", category.Category_Description);
                 cmd.Parameters.AddWithValue("@Category_Image", SqlDbType.Image).Value = category.Category_Image;
 
+
                 cmd.ExecuteNonQuery();
 
                 return category;
@@ -44,14 +45,25 @@ namespace ECommerceSystem.Database
                     UPDATE Category SET
                     Category_Name = @Category_Name, 
                     Category_Description = @Category_Description
-                    WHERE Category_ID = @Category_ID;
                 ";
+
+                if (category.Category_Image != null)
+                {
+                    sql += ", Category_Image = @Category_Image";
+                }
+
+                sql += " WHERE Category_ID = @Category_ID";
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConnection);
 
                 cmd.Parameters.AddWithValue("@Category_ID", category.Category_ID);
                 cmd.Parameters.AddWithValue("@Category_Name", category.Category_Name);
                 cmd.Parameters.AddWithValue("@category_Description", category.Category_Description);
+
+                if (category.Category_Image != null)
+                {
+                    cmd.Parameters.AddWithValue("@Category_Image", SqlDbType.Image).Value = category.Category_Image;
+                }
 
                 cmd.ExecuteNonQuery();
 
@@ -130,6 +142,11 @@ namespace ECommerceSystem.Database
                         category.Category_ID = (int)reader["Category_ID"];
                         category.Category_Name = (String)reader["Category_Name"];
                         category.Category_Description = (String)reader["Category_Description"];
+
+                        byte[] bytes = (byte[])reader["Category_Image"];
+                        string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+                        category.Category_Image_Url = "data:image/png;base64," + base64String;
 
 
                         categories.Add(category);

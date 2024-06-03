@@ -11,5 +11,7 @@ namespace ECommerceSystem.Models
         public string Category_Description { get; set; }
 
         public Byte[] Category_Image { get; set; }
+
+        public String Category_Image_Url { get; set; }
     }
 }

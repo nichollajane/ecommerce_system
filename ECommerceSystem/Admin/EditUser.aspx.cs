@@ -23,6 +23,8 @@ namespace ECommerceSystem.Admin
                     Response.Redirect("~/Admin/User.aspx");
                 }
 
+                ViewState["User_ID"] = User_ID;
+
                 GetUser(User_ID);
             }
         }
@@ -51,6 +53,7 @@ namespace ECommerceSystem.Admin
         {
             Models.User user = new Models.User();
 
+            user.User_ID = (int) ViewState["User_ID"];
             user.Fullname = Fullname.Text;
             user.User_Type = User_Type.Text;
             user.Email = Email.Text;

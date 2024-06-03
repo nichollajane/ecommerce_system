@@ -12,15 +12,22 @@ namespace ECommerceSystem
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetProducts();
-        }
+            if (!IsPostBack)
+            {
+                int Category_ID = Convert.ToInt32(Request.QueryString["Category_ID"]);
 
-        protected void GetProducts()
-        {
-            List<Product> products = productDB.GetProducts();
 
-            ProductsRepeater.DataSource = products;
-            ProductsRepeater.DataBind();
+                if (Category_ID == 0)
+                {
+                    ProductsRepeater.DataSource = productDB.GetProducts();
+                    ProductsRepeater.DataBind();
+                } 
+                else
+                {
+                    ProductsRepeater.DataSource = productDB.GetProductsByCategory(Category_ID);
+                    ProductsRepeater.DataBind();
+                }
+            }
         }
     }
 }

@@ -156,29 +156,6 @@ namespace ECommerceSystem.Database
 
                         decimal totalPrice = price * quantity;
 
-                        /** orderItem.Order_Item_ID = (int)reader["Order_Item_ID"];
-                        orderItem.Order_ID = (int)reader["Order_ID"];
-                        orderItem.Product_ID = (int)reader["Product_ID"];
-                        orderItem.Order_Quantity = (int)reader["Order_Quantity"];
-                        orderItem.Unit_Price = (decimal)reader["Unit_Price"];
-                        orderItem.Total_Price = totalPrice;
-                        orderItem.Product_ID = (int)reader["Product_ID"];
-                        orderItem.Product_Name = reader["Product_Name"].ToString();
-                        orderItem.Product_SKU = reader["Product_SKU"].ToString();
-                        orderItem.Product_Description = reader["Product_Description"].ToString();
-                        orderItem.Product_Price = price;
-                        orderItem.Product_Brand = reader["Product_Brand"].ToString();
-                        orderItem.Product_Availability = reader["Product_Availability"].ToString();
-                        orderItem.Product_Quantity = (int)reader["Product_Quantity"];
-                        orderItem.Product_Color = reader["Product_Color"].ToString();
-                        orderItem.Product_Size = reader["Product_Size"].ToString();
-
-                        byte[] bytes = (byte[])reader["Product_Image"];
-                        string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
-
-                        orderItem.Product_Image_Url = "data:image/png;base64," + base64String;
-                        orderItem.Total_Price = 0; **/
-
                         orderItems.Add(orderItem);
                     }
                 }
