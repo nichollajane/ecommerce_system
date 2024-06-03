@@ -10,7 +10,7 @@
 namespace ECommerceSystem.Account {
     
     
-    public partial class Profile {
+    public partial class Default {
         
         /// <summary>
         /// Label1 control.

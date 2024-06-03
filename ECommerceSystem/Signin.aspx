@@ -8,7 +8,7 @@
     <div class="container sign-container d-flex justify-content-center align-items-center">
         <div class="card signin-form">
             <div class="card-body">
-                <h5 class="card-title text-center">Sign In</h5>
+                <h4 class="card-title text-center">Sign In</h4>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
@@ -30,7 +30,9 @@
                 >
                 </asp:Label>
 
-                <asp:Button ID="SigninButton" runat="server" Text="Login" CssClass="btn btn-primary w-100" OnClick="SigninButton_Click" />
+                <asp:Button ID="SigninButton" runat="server" Text="Login" CssClass="btn btn-primary w-100 mb-2" OnClick="SigninButton_Click" />
+
+                <p class="mt-2 text-center">Don't have an account? <a href="/Signup.aspx" class="link-primary">Sign up</a></p>
             </div>
         </div>
     </div>
