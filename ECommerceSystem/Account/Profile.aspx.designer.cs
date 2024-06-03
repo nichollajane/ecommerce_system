@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ECommerceSystem {
+namespace ECommerceSystem.Account {
     
     
-    public partial class Signup {
+    public partial class Profile {
         
         /// <summary>
         /// Label1 control.
@@ -112,13 +112,13 @@ namespace ECommerceSystem {
         protected global::System.Web.UI.WebControls.TextBox ConfirmPassword;
         
         /// <summary>
-        /// ConfirmPasswordError control.
+        /// CompareValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ConfirmPasswordError;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
         /// Label6 control.
@@ -301,12 +301,12 @@ namespace ECommerceSystem {
         protected global::System.Web.UI.WebControls.TextBox Zipcode;
         
         /// <summary>
-        /// SignupButton control.
+        /// SaveChangesButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SignupButton;
+        protected global::System.Web.UI.WebControls.Button SaveChangesButton;
     }
 }

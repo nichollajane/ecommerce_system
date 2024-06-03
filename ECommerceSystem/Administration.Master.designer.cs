@@ -31,6 +31,24 @@ namespace ECommerceSystem {
         protected global::System.Web.UI.HtmlControls.HtmlForm admin;
         
         /// <summary>
+        /// Fullname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Fullname;
+        
+        /// <summary>
+        /// SignoutButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SignoutButton;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

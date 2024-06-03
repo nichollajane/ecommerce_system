@@ -4,7 +4,7 @@
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div class="d-flex justify-content-between align-items-center mb-2">
         <h2>Users</h2>
-        <asp:LinkButton CssClass="btn btn-primary" PostBackUrl="~/Admin/User/CreateUser.aspx"  runat="server">
+        <asp:LinkButton CssClass="btn btn-primary" PostBackUrl="~/Admin/CreateUser.aspx"  runat="server">
             <i class="bi bi-plus-circle"></i>
             Add User
         </asp:LinkButton>
@@ -13,7 +13,7 @@
     <div class="card fs-6">
         <div class="card-body">
             <div class="table-responsive">
-                <asp:GridView ID="AdminUsersGridView" runat="server" CellPadding="5" CellSpacing="5" CssClass="table" AutoGenerateColumns="False" OnRowCommand=AdminUsersGridView_RowCommand">
+                <asp:GridView ID="AdminUsersGridView" runat="server" CellPadding="5" CellSpacing="5" CssClass="table" AutoGenerateColumns="False" OnRowCommand="AdminUsersGridView_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="User_ID" HeaderText="ID" />
                         <asp:BoundField DataField="User_Fullname" HeaderText="Full Name" />

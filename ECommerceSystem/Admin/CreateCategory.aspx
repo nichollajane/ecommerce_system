@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="CreateCategory.aspx.cs" Inherits="ECommerceSystem.CreateCategory" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="CreateCategory.aspx.cs" Inherits="ECommerceSystem.Admin.CreateCategory" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div class="d-flex justify-content-between align-items-center mb-2">
@@ -33,7 +33,6 @@
                         </td>
                         <td class="auto-style1">
                             <asp:FileUpload ID="FileUpload" runat="server" CssClass="form-control" />
-                            <br />
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="FileUpload" ErrorMessage="Image is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                     </tr>

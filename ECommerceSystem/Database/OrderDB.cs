@@ -67,10 +67,10 @@ namespace ECommerceSystem.Database
                     UPDATE [Order] SET
                     Order_No = @Order_No, 
                     Order_Date = @Order_Date,
-                    Order_Quantity = @Order_Quantity
-                    Order_Price = @Order_Price
-                    Payment_Method = @Payment_Method
-                    Shipping_Address = @Shipping_Address
+                    Order_Quantity = @Order_Quantity,
+                    Order_Price = @Order_Price,
+                    Payment_Method = @Payment_Method,
+                    Shipping_Address = @Shipping_Address,
                     Order_Status = @Order_Status
 
                     WHERE Order_ID = @Order_ID;
@@ -85,6 +85,7 @@ namespace ECommerceSystem.Database
                 cmd.Parameters.AddWithValue("@Order_Quantity", order.Order_Quantity);
                 cmd.Parameters.AddWithValue("@Order_Price", order.Order_Price);
                 cmd.Parameters.AddWithValue("@Payment_Method", order.Payment_Method);
+                cmd.Parameters.AddWithValue("@Shipping_Address", order.Shipping_Address);
                 cmd.Parameters.AddWithValue("@Order_Status", order.Order_Status);
 
                 cmd.ExecuteNonQuery();
@@ -106,6 +107,26 @@ namespace ECommerceSystem.Database
                 {
                     cmd.Parameters.AddWithValue("@User_ID", User_ID);
 
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+
+        public DataTable ListAllOrders()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection sqlConnection = connection.connect())
+            {
+                sqlConnection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM [Order] INNER JOIN [User] on [Order].User_ID = [User].User_ID ORDER BY Order_ID DESC", sqlConnection))
+                {
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
                         adapter.Fill(dataTable);

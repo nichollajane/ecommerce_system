@@ -10,15 +10,15 @@
 namespace ECommerceSystem.Admin {
     
     
-    public partial class Users {
+    public partial class OrderList {
         
         /// <summary>
-        /// AdminUsersGridView control.
+        /// OrdersGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AdminUsersGridView;
+        protected global::System.Web.UI.WebControls.GridView OrdersGridView;
     }
 }

@@ -181,12 +181,15 @@
     <Content Include="Account\CheckOut.aspx" />
     <Content Include="Account\OrderDetail.aspx" />
     <Content Include="Account\OrderList.aspx" />
+    <Content Include="Account\Profile.aspx" />
     <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\CreateCategory.aspx" />
     <Content Include="Admin\EditCategory.aspx" />
     <Content Include="Admin\CreateProduct.aspx" />
     <Content Include="Admin\EditProduct.aspx" />
     <Content Include="Admin\EditUser.aspx" />
+    <Content Include="Admin\OrderDetail.aspx" />
+    <Content Include="Admin\OrderList.aspx" />
     <Content Include="css\products.css" />
     <Content Include="css\signin.css" />
     <Content Include="css\styles.css" />
@@ -207,6 +210,7 @@
     <Content Include="Signup.aspx" />
     <Content Include="Customer.Master" />
     <Content Include="Site.Master" />
+    <Content Include="Administration.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -258,6 +262,20 @@
     <Compile Include="Account\OrderList.aspx.designer.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration.Master.cs">
+      <DependentUpon>Administration.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration.Master.designer.cs">
+      <DependentUpon>Administration.Master</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Categories.aspx.cs">
       <DependentUpon>Categories.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -299,6 +317,20 @@
     </Compile>
     <Compile Include="Admin\EditUser.aspx.designer.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderDetail.aspx.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderDetail.aspx.designer.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer.Master.cs">
       <DependentUpon>Customer.Master</DependentUpon>

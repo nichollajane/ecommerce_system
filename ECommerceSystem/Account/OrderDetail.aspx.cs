@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ECommerceSystem.Models;
 using ECommerceSystem.Database;
+using System.Data;
 
 namespace ECommerceSystem.Account
 {
@@ -43,6 +44,16 @@ namespace ECommerceSystem.Account
             order = orderDB.Get(Order_ID);
 
             return order;
+        }
+
+        protected void OrderItemsGridView_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                byte[] bytes = (byte[])(e.Row.DataItem as DataRowView)["Total_Price"];
+                string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                (e.Row.FindControl("Total_Price") as Label).Text = "test";
+            }
         }
     }
 }

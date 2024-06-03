@@ -3,11 +3,9 @@ using System.Data.SqlTypes;
 
 namespace ECommerceSystem.Models
 {
-    public class Order
+    public class Order: User
     {
         public int Order_ID { get; set; }
-
-        public int User_ID { get; set; }
 
         public int Order_No { get; set; }
 

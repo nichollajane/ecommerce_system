@@ -154,12 +154,14 @@ namespace ECommerceSystem.Database
                         int quantity = (int)reader["Product_Quantity"];
                         decimal price = (decimal)reader["Product_Price"];
 
-                        orderItem.Order_Item_ID = (int)reader["Order_Item_ID"];
+                        decimal totalPrice = price * quantity;
+
+                        /** orderItem.Order_Item_ID = (int)reader["Order_Item_ID"];
                         orderItem.Order_ID = (int)reader["Order_ID"];
                         orderItem.Product_ID = (int)reader["Product_ID"];
                         orderItem.Order_Quantity = (int)reader["Order_Quantity"];
                         orderItem.Unit_Price = (decimal)reader["Unit_Price"];
-                        orderItem.Total_Price = (decimal)reader["Total_Price"];
+                        orderItem.Total_Price = totalPrice;
                         orderItem.Product_ID = (int)reader["Product_ID"];
                         orderItem.Product_Name = reader["Product_Name"].ToString();
                         orderItem.Product_SKU = reader["Product_SKU"].ToString();
@@ -175,7 +177,7 @@ namespace ECommerceSystem.Database
                         string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
 
                         orderItem.Product_Image_Url = "data:image/png;base64," + base64String;
-                        orderItem.Total_Price = price * quantity;
+                        orderItem.Total_Price = 0; **/
 
                         orderItems.Add(orderItem);
                     }

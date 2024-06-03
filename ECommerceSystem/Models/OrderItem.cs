@@ -13,5 +13,7 @@ namespace ECommerceSystem.Models
         public Decimal Unit_Price { get; set; }
 
         public Decimal Total_Price { get; set; }
+
+        public String Total { get; set; }
     }
 }

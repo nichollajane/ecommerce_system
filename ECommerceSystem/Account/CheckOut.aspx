@@ -79,7 +79,7 @@
                             <tr>
                                 <td class="auto-style4 fw-semibold">Order No:</td>
                                 <td class="auto-style5">
-                                    <asp:TextBox ID="Order_No" runat="server" CssClass="form-control w-100" Width="200px" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox ID="Order_No" runat="server" CssClass="form-control w-100" Width="200px" ReadOnly="true" OnTextChanged="Order_No_TextChanged"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Order_No" Display="Dynamic" ErrorMessage="Order No is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>

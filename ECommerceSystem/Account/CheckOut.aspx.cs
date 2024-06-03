@@ -132,5 +132,10 @@ namespace ECommerceSystem.Account
 
             return orderNumber;
         }
+
+        protected void Order_No_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="ECommerceSystem.Products" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="ECommerceSystem.Admin.Products" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div class="d-flex justify-content-between align-items-center mb-2">
         <h2>Products</h2>
-        <asp:LinkButton CssClass="btn btn-primary" PostBackUrl="~/Admin/Product/CreateProduct.aspx"  runat="server">
+        <asp:LinkButton CssClass="btn btn-primary" PostBackUrl="~/Admin/CreateProduct.aspx"  runat="server">
             <i class="bi bi-plus-circle"></i>
             Add Product
         </asp:LinkButton>

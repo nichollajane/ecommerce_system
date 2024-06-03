@@ -7,69 +7,69 @@
                 <h2 class="text-center mb-4">Signup</h2>
                 <p class="mt-2 text-center">Already have an account? <a href="/Login.aspx" class="link-primary">Login</a></p>
                 <div class="mb-3">
-                    <label for="FullName" class="form-label">Full Name</label>
+                    <asp:Label ID="Label1" runat="server" Text="FullName"></asp:Label>
                     <asp:TextBox ID="FullName" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="UserType" class="form-label">User Type</label>
+                    <asp:Label ID="Label2" runat="server" Text="UserType"></asp:Label>
                     <asp:TextBox ID="UserType" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="Email" class="form-label">Email</label>
+                    <asp:Label ID="Label3" runat="server" Text="Email"></asp:Label>
                     <asp:TextBox ID="Email" runat="server" CssClass="form-control"></asp:TextBox>
                     <asp:Label ID="EmailExists" runat="server" ForeColor="Red" Visible="false">
                         Email already exists!
                     </asp:Label>
                 </div>
                 <div class="mb-3">
-                    <label for="Password" class="form-label">Password</label>
+                    <asp:Label ID="Label4" runat="server" Text="Password"></asp:Label>
                     <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                    <asp:Label ID="Label5" runat="server" Text="Confirm Password"></asp:Label>
                     <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                     <asp:Label ID="ConfirmPasswordError" runat="server" ForeColor="Red" Visible="false">
                         Confirm password didn't match!
                     </asp:Label>
                 </div>
                 <div class="mb-3">
-                    <label for="ContactNo" class="form-label">Contact No</label>
+                    <asp:Label ID="Label6" runat="server" Text="Contact No"></asp:Label>
                     <asp:TextBox ID="ContactNo" runat="server" CssClass="form-control"  TextMode="Number"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="Gender" class="form-label">Gender</label>
+                    <asp:Label ID="Label7" runat="server" Text="Gender"></asp:Label>
                     <asp:TextBox ID="Gender" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="HomeNo" class="form-label">Home No</label>
+                    <asp:Label ID="Label8" runat="server" Text="Home No"></asp:Label>
                     <asp:TextBox ID="HomeNo" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="Street" class="form-label">Street</label>
+                    <asp:Label ID="Label9" runat="server" Text="Street"></asp:Label>
                     <asp:TextBox ID="Street" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="Barangay" class="form-label">Barangay</label>
+                    <asp:Label ID="Label10" runat="server" Text="Street"></asp:Label>
                     <asp:TextBox ID="Barangay" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="City" class="form-label">City</label>
+                    <asp:Label ID="Label11" runat="server" Text="City"></asp:Label>
                     <asp:TextBox ID="City" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="Municipality" class="form-label">Municipality</label>
+                    <asp:Label ID="Label12" runat="server" Text="Municipality"></asp:Label>
                     <asp:TextBox ID="Municipality" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="Region" class="form-label">Region</label>
+                    <asp:Label ID="Label13" runat="server" Text="Region"></asp:Label>
                     <asp:TextBox ID="Region" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="Country" class="form-label">Country</label>
+                    <asp:Label ID="Label14" runat="server" Text="Country"></asp:Label>
                     <asp:TextBox ID="Country" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="mb-3">
-                    <label for="Zipcode" class="form-label">Zipcode</label>
+                    <asp:Label ID="Label15" runat="server" Text="Zipcode"></asp:Label>
                     <asp:TextBox ID="Zipcode" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
                 </div>
                 <div class="text-center">

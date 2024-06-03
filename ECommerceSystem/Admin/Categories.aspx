@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="Categories.aspx.cs" Inherits="ECommerceSystem.Categories" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="Categories.aspx.cs" Inherits="ECommerceSystem.Admin.Categories" %>
 
 
 <asp:Content ID="Head" runat="server" ContentPlaceHolderID="Head">
@@ -15,7 +15,7 @@
     <div class="d-flex justify-content-between align-items-center mb-2">
         <h2>Categories</h2>
 
-        <asp:LinkButton CssClass="btn btn-primary" PostBackUrl="~/Admin/Category/CreateCategory.aspx"  runat="server">
+        <asp:LinkButton CssClass="btn btn-primary" PostBackUrl="~/Admin/CreateCategory.aspx"  runat="server">
             <i class="bi bi-plus-circle mr-2"></i>
             Add Category
         </asp:LinkButton>
