@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using ECommerceSystem.Models;
 using ECommerceSystem.Database;
 
-namespace ECommerceSystem
+namespace ECommerceSystem.Admin
 {
     public partial class CreateProduct : System.Web.UI.Page
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="User List" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="ECommerceSystem.Admin.CreateUser" %>
+﻿<%@ Page Title="User List" Language="C#" MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="ECommerceSystem.CreateUser" %>
 
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">

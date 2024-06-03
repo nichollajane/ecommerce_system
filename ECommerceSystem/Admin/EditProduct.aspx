@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditProduct.aspx.cs" Inherits="ECommerceSystem.EditProduct" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="EditProduct.aspx.cs" Inherits="ECommerceSystem.EditProduct" %>
 
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">

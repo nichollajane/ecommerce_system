@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ECommerceSystem {
+namespace ECommerceSystem.Admin {
     
     
     public partial class CreateCategory {

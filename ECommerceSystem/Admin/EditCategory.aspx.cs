@@ -2,7 +2,7 @@
 using ECommerceSystem.Models;
 using ECommerceSystem.Database;
 
-namespace ECommerceSystem
+namespace ECommerceSystem.Admin
 {
     public partial class EditCategory : System.Web.UI.Page
     {

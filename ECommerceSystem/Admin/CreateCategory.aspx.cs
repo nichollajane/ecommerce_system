@@ -3,7 +3,7 @@ using ECommerceSystem.Models;
 using ECommerceSystem.Database;
 using System.Web;
 
-namespace ECommerceSystem
+namespace ECommerceSystem.Admin
 {
     public partial class CreateCategory : System.Web.UI.Page
     {

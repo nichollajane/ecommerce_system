@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Customer.Master" CodeBehind="OrderList.aspx.cs" Inherits="ECommerceSystem.Account.OrderList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Customer.Master" CodeBehind="OrderList.aspx.cs" enableEventValidation="false" Inherits="ECommerceSystem.Account.OrderList" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div class="d-flex justify-content-between align-items-center mb-2">
@@ -30,16 +30,9 @@
                         <asp:BoundField DataField="Order_Status" HeaderText="Status" />
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <div class="d-flex align-items-center gap-2">
-                                    <asp:Button 
-                                        ID="ViewOrderButton" 
-                                        runat="server" 
-                                        Text="View" 
-                                        CssClass="btn btn-sm btn-primary"
-                                        CommandArgument='<%# Eval("Order_ID") %>' 
-                                        CommandName="View" 
-                                    />
-                                </div>
+                                <a href='/Account/OrderDetail.aspx?Order_ID=<%# Eval("Order_ID") %>' class="btn btn-sm btn-primary">
+                                    View
+                                </a>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="User List" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" Inherits="ECommerceSystem.Admin.EditUser" %>
+﻿<%@ Page Title="User List" Language="C#" MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" Inherits="ECommerceSystem.Admin.EditUser" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <h2 class="mb-4">Edit User</h2>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using ECommerceSystem;
 using ECommerceSystem.Database;
 
-namespace ECommerceSystem.Admin.User
+namespace ECommerceSystem.Admin
 {
     public partial class CreateUser : System.Web.UI.Page
     {

@@ -4,7 +4,7 @@ using ECommerceSystem.Models;
 using ECommerceSystem.Database;
 using System.Data;
 
-namespace ECommerceSystem
+namespace ECommerceSystem.Admin
 {
     public partial class Categories : System.Web.UI.Page
     {

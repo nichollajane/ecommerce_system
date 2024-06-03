@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Customer.Master" CodeBehind="OrderDetail.aspx.cs" Inherits="ECommerceSystem.Account.OrderDetail" EnableEventValidation="false"  %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Customer.Master" CodeBehind="OrderDetail.aspx.cs" Inherits="ECommerceSystem.Account.OrderDetail" enableEventValidation="true"  %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div class="d-flex justify-content-between align-items-center mb-2">
@@ -39,13 +39,10 @@
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
-   
-                   <asp:TemplateField HeaderText="Total Price">
-                        <ItemTemplate>
-                            <asp:Label ID="totalPriceLabel" runat="server" Text='<%# Convert.ToDecimal(Eval("Total_Price")).ToString("₱#,##0.00") %>' />
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <asp:BoundField DataField="Order_Quantity" HeaderText="Quantity" />
+
+                    <asp:BoundField DataField="Total_Price" HeaderText="Total Price" />
+ 
                 </Columns>
             </asp:GridView>
         </div>

@@ -201,7 +201,6 @@
     <Content Include="css\bootstrap\bootstrap.min.css.map" />
     <Content Include="css\bootstrap\fonts\bootstrap-icons.woff" />
     <Content Include="css\bootstrap\fonts\bootstrap-icons.woff2" />
-    <Content Include="Admin\Admin.Master" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="Signin.aspx" />
@@ -360,13 +359,6 @@
       <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Admin\Admin.Master.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Admin.Master.designer.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

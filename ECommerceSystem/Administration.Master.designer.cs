@@ -10,7 +10,7 @@
 namespace ECommerceSystem {
     
     
-    public partial class AdminMaster {
+    public partial class Administration {
         
         /// <summary>
         /// Head control.

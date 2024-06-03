@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ECommerceSystem.Admin.User {
+namespace ECommerceSystem.Admin {
     
     
     public partial class CreateUser {

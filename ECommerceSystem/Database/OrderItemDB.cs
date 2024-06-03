@@ -151,12 +151,12 @@ namespace ECommerceSystem.Database
                     {
                         OrderItem orderItem = new OrderItem();
 
-                        int quantity = (int)reader["Quantity"];
+                        int quantity = (int)reader["Product_Quantity"];
                         decimal price = (decimal)reader["Product_Price"];
 
                         orderItem.Order_Item_ID = (int)reader["Order_Item_ID"];
                         orderItem.Order_ID = (int)reader["Order_ID"];
-                        orderItem.Product_ID = (int)reader["Product-ID"];
+                        orderItem.Product_ID = (int)reader["Product_ID"];
                         orderItem.Order_Quantity = (int)reader["Order_Quantity"];
                         orderItem.Unit_Price = (decimal)reader["Unit_Price"];
                         orderItem.Total_Price = (decimal)reader["Total_Price"];

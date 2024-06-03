@@ -78,10 +78,13 @@ namespace ECommerceSystem.Account
                 carts = cartDB.GetCarts(int.Parse(ticket.Name));
             }
 
+            int quantity = int.Parse(Order_Quantity.Text);
+            decimal totalPrice = carts.Sum(cart => cart.Total_Price);
+
             order.Order_No = int.Parse(Order_No.Text);
             order.User_ID = int.Parse(ticket.Name);
             order.Order_Date = DateTime.Now;
-            order.Order_Quantity = int.Parse(Order_Quantity.Text);
+            order.Order_Quantity = quantity;
             order.Order_Price = carts.Sum(cart => cart.Total_Price);
             order.Shipping_Address = Shipping_Address.Text;
             order.Payment_Method = "COD";
@@ -97,18 +100,19 @@ namespace ECommerceSystem.Account
                 orderItem.Order_ID = order.Order_ID;
                 orderItem.Product_ID = cart.Product_ID;
                 orderItem.Order_Quantity = cart.Quantity;
-                orderItem.Unit_Price = cart.Price;
+                orderItem.Unit_Price = cart.Product_Price;
                 orderItem.Total_Price = cart.Total_Price;
 
                 orderItemDB.Create(orderItem);
 
                 cartDB.Delete(cart);
 
-                Models.Product product = new Models.Product();
+                /** Models.Product product = new Models.Product();
                 product.Product_ID = orderItem.Product_ID;
                 product.Product_Quantity -= orderItem.Order_Quantity;
+                product.Product_SKU = product.Product_SKU;
 
-                productDB.Update(product);
+                productDB.Update(product); **/
             }
 
             Response.Redirect("~/Account/OrderList.aspx");

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="ECommerceSystem.Products" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="ECommerceSystem.Products" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div class="d-flex justify-content-between align-items-center mb-2">
