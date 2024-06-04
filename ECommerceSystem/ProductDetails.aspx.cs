@@ -2,6 +2,7 @@
 using ECommerceSystem.Models;
 using ECommerceSystem.Database;
 using System.Web.Security;
+using System.Web.UI;
 
 namespace ECommerceSystem
 {
@@ -39,6 +40,11 @@ namespace ECommerceSystem
             Product_Category.Text = product.Category_Name;
             Product_Quantity.Text = product.Product_Quantity + "pcs";
 
+            if (product.Product_Quantity == 0)
+            {
+                AddToCartButton.Visible = false;
+            }
+
             return product;
         }
 
@@ -55,27 +61,37 @@ namespace ECommerceSystem
 
             int quantity = int.Parse(Quantity.Text);
 
-            if (cart != null)
+            if (quantity > product.Product_Quantity)
             {
-                cart.Quantity = cart.Quantity + quantity;
-                cart.Price = cart.Price + product.Product_Price * quantity;
-                cart.Last_Update = DateTime.Now;
-
-                cartDB.Update(cart);
-            } else
-            {
-                cart = new Cart();
-                cart.User_ID = int.Parse(ticket.Name);
-                cart.Product_ID = product.Product_ID;
-                cart.Quantity = quantity;
-                cart.Price = product.Product_Price * quantity;
-                cart.Date_Created = DateTime.Now;
-                cart.Last_Update = DateTime.Now;
-
-                cartDB.Create(cart);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Entered quantity exceeds available quantity!');", true);
             }
+            else
+            {
+                if (cart != null)
+                {
+                    cart.Quantity = cart.Quantity + quantity;
+                    cart.Price = cart.Price + product.Product_Price * quantity;
+                    cart.Last_Update = DateTime.Now;
 
-            Response.Redirect("ProductDetails.aspx");
+                    cartDB.Update(cart);
+                }
+                else
+                {
+                    cart = new Cart();
+                    cart.User_ID = int.Parse(ticket.Name);
+                    cart.Product_ID = product.Product_ID;
+                    cart.Quantity = quantity;
+                    cart.Price = product.Product_Price * quantity;
+                    cart.Date_Created = DateTime.Now;
+                    cart.Last_Update = DateTime.Now;
+
+                    cartDB.Create(cart);
+                }
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Added to cart!');", true);
+
+                Response.Redirect("ProductDetails.aspx");
+            }
         }
     }
 }

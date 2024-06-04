@@ -2,6 +2,11 @@
 
 <asp:Content ID="Head" ContentPlaceHolderID="Head" runat="server">
     <link href="css/products.css" rel="stylesheet" />
+    <style>
+        .cursor-pointer {
+            cursor: pointer;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
@@ -12,7 +17,7 @@
     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         <asp:Repeater ID="ProductsRepeater" runat="server">
             <ItemTemplate>
-                <div onclick='<%# "viewProduct(" + Eval("Product_Id") + ")" %>' class="group relative">
+                <div onclick='<%# "viewProduct(" + Eval("Product_Id") + ")" %>' class="group relative cursor-pointer">
                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                         <img src='<%# Eval("Product_Image_Url") %>' alt='<%# Eval("Product_Name") %>' class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                     </div>

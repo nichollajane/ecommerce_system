@@ -49,7 +49,7 @@
 
                     <div class="d-flex justify-content-between">
                         <a href='/Account/CheckOut.aspx?Cart_ID=<%# Eval("Cart_ID") %>' class="btn btn-sm btn-primary">
-                            Check Out
+                            <%# (Eval("Product_Quantity").ToString() != "0") ? "Check Out" : "Out of Stock" %>
                         </a>
 
                         <asp:Button 

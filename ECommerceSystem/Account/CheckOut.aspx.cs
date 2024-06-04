@@ -111,9 +111,16 @@ namespace ECommerceSystem.Account
 
                 product.Product_ID = orderItem.Product_ID;
                 product.Product_Quantity -= orderItem.Order_Quantity;
+                
+                if (product.Product_Quantity == 0)
+                {
+                    product.Product_Availability = "Not available";
+                }
 
                 productDB.Update(product);
             }
+
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Order placed!');", true);
 
             Response.Redirect("~/Account/OrderList.aspx");
         }

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title><%: Page.Title %> - ECommerce System</title>
+    <title>ECommerce System</title>
     <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/bootstrap/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="~/css/styles.css" rel="stylesheet" />
