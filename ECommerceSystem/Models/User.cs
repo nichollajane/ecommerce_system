@@ -16,7 +16,7 @@ namespace ECommerceSystem.Models
 
         public string Password { get; set; }
 
-        public int Contact_No { get; set; }
+        public String Contact_No { get; set; }
 
         public string Gender { get; set; }
 

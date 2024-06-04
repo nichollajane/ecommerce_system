@@ -178,7 +178,7 @@ namespace ECommerceSystem.Database
                     user.User_Type = reader["User_Type"].ToString();
                     user.Email = reader["User_Email"].ToString();
                     user.Password = reader["User_Password"].ToString();
-                    user.Contact_No =(int)reader["User_Contact_No"];
+                    user.Contact_No = reader["User_Contact_No"].ToString();
                     user.Home_No = reader["User_Home_No"].ToString();
                     user.Street = reader["User_Street"].ToString();
                     user.Barangay = reader["User_Barangay"].ToString();
@@ -252,7 +252,7 @@ namespace ECommerceSystem.Database
                             user.User_Type = reader["User_Type"].ToString();
                             user.Email = reader["User_Email"].ToString();
                             user.Password = reader["User_Password"].ToString();
-                            user.Contact_No = (int)reader["User_Contact_No"];
+                            user.Contact_No = reader["User_Contact_No"].ToString();
                             user.Home_No = reader["User_Home_No"].ToString();
                             user.Street = reader["User_Street"].ToString();
                             user.Barangay = reader["User_Barangay"].ToString();

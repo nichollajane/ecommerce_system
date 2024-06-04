@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <asp:Label ID="Label10" runat="server" Text="Street"></asp:Label>
+                    <asp:Label ID="Label10" runat="server" Text="Barangay"></asp:Label>
                     <asp:TextBox ID="Barangay" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 

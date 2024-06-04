@@ -42,7 +42,7 @@ namespace ECommerceSystem.Account
             user.User_ID = user.User_ID;
             user.Fullname = FullName.Text;
             user.Email = Email.Text;
-            user.Contact_No = int.Parse(ContactNo.Text);
+            user.Contact_No = ContactNo.Text;
             user.Gender = Gender.Text;
             user.Home_No = HomeNo.Text;
             user.Street = Street.Text;

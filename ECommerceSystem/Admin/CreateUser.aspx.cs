@@ -25,7 +25,7 @@ namespace ECommerceSystem.Admin
             user.User_Type = User_Type.Text;
             user.Email = Email.Text;
             user.Password = Password.Text;
-            user.Contact_No = int.Parse(Contact_No.Text);
+            user.Contact_No = Contact_No.Text;
             user.Gender = Gender.Text;
             user.Home_No = Home_No.Text;
             user.Street = Street.Text;
