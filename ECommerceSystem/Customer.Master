@@ -40,6 +40,9 @@
                   <ul class="dropdown-menu text-small" style="">
                     <li><a class="dropdown-item" href="/Account/CartList.aspx">Cart</a></li>
                     <li><a class="dropdown-item" href="/Account/OrderList.aspx">Orders</a></li>
+                    <li>
+                        <asp:HyperLink ID="NavigateToAdmin" NavigateUrl="/Admin/Products.aspx" CssClass="dropdown-item" runat="server" Text="Access admin" />
+                    </li>
                     <li><a class="dropdown-item" href="/Account">Account</a></li>
                     <li>
                         <asp:Button ID="SignoutButton" runat="server" Text="Sign out" CssClass="dropdown-item" OnClick="SignoutButton_Click" />

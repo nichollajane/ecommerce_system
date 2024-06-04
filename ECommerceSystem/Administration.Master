@@ -10,13 +10,9 @@
 
     <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/bootstrap/bootstrap-icons.min.css" rel="stylesheet" />
-    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/styles.css" rel="stylesheet" />
     <link href="~/css/header.css" rel="stylesheet" />
     <link href="~/css/utilities.css" rel="stylesheet" />
-
-    <style>
-        body { background-color: #f3f4f6; }
-    </style>
 
      <asp:ContentPlaceHolder ID="Head" runat="server" />
 </head>
@@ -26,27 +22,27 @@
             <div class="container">
               <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-                  <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                  <img src="/img/logo.png" width="40" height="32" />
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li class="nav-item">
-                      <a class="nav-link" href="/Admin/Products.aspx">
+                      <a class="nav-link text-dark" href="/Admin/Products.aspx">
                           Products
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Admin/Categories.aspx">
+                      <a class="nav-link text-dark" href="/Admin/Categories.aspx">
                           Categories
                       </a>
                     </li>
                       <li class="nav-item">
-                      <a class="nav-link" href="/Admin/OrderList.aspx">
+                      <a class="nav-link text-dark" href="/Admin/OrderList.aspx">
                           Orders
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/Admin/Users.aspx">
+                      <a class="nav-link text-dark" href="/Admin/Users.aspx">
                           Users
                       </a>
                     </li>
@@ -57,10 +53,14 @@
                     <asp:Label 
                         ID="Fullname"
                         runat="server"
+                        CssClass="text-primary"
                     > </asp:Label>
                   </a>
                   <ul class="dropdown-menu text-small" style="">
                     <li>
+                        <li>
+                            <asp:HyperLink ID="NavigateToAdmin" NavigateUrl="/" CssClass="dropdown-item" runat="server" Text="Access website" />
+                        </li>
                         <asp:Button ID="SignoutButton" runat="server" Text="Sign out" CssClass="dropdown-item" OnClick="SignoutButton_Click" />
                     </li>
                   </ul>

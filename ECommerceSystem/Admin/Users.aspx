@@ -1,5 +1,4 @@
-﻿<%@ Page Title="User List" Language="C#" MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="Users.aspx.cs" Inherits="ECommerceSystem.Admin.Users" EnableEventValidation="false" %>
-
+﻿<%@ Page Title="User List" Language="C#" MasterPageFile="~/Administration.Master" AutoEventWireup="true" CodeBehind="~/Admin/Users.aspx.cs" Inherits="ECommerceSystem.Admin.Users" EnableEventValidation="false" %>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div class="d-flex justify-content-between align-items-center mb-2">

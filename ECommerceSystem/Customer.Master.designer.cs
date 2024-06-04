@@ -40,6 +40,15 @@ namespace ECommerceSystem {
         protected global::System.Web.UI.WebControls.Label Fullname;
         
         /// <summary>
+        /// NavigateToAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink NavigateToAdmin;
+        
+        /// <summary>
         /// SignoutButton control.
         /// </summary>
         /// <remarks>
