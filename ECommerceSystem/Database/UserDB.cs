@@ -124,7 +124,7 @@ namespace ECommerceSystem.Database
                     User_Region = @User_Region,
                     User_Country = @User_Country,
                     User_Zipcode = @User_Zipcode
-                    WHERE @User_ID = @User_ID;
+                    WHERE User_ID = @User_ID;
                 ";
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConnection);

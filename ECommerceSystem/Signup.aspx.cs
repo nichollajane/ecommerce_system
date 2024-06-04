@@ -33,11 +33,14 @@ namespace ECommerceSystem
             user.Country = Country.Text;
             user.Zipcode = int.Parse(Zipcode.Text);
             user.User_Type = "Customer";
+            user.Barangay = Barangay.Text;
 
             if (userDB.checkUserEmailExists(user.Email))
             {
                 return;
             }
+
+            userDB.Create(user);
 
             Response.Redirect("/Signin.aspx");
         }

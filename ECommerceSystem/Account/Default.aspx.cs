@@ -11,31 +11,35 @@ namespace ECommerceSystem.Account
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(Request.Cookies[FormsAuthentication.FormsCookieName].Value);
+            if (!IsPostBack)
+            {
+                FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(Request.Cookies[FormsAuthentication.FormsCookieName].Value);
 
-            User user = userDB.Get(int.Parse(ticket.Name));
+                User user = userDB.Get(int.Parse(ticket.Name));
 
-            ViewState["User_ID"] = user.User_ID;
+                ViewState["User_ID"] = int.Parse(ticket.Name);
 
-            FullName.Text = user.Fullname;
-            Email.Text = user.Email;
-            Password.Text = user.Password;
-            ContactNo.Text = "" + user.Contact_No;
-            Gender.Text = user.Gender;
-            HomeNo.Text = user.Home_No;
-            Street.Text = user.Street;
-            Barangay.Text = user.Barangay;
-            City.Text = user.City;
-            Municipality.Text = user.Municipality;
-            Region.Text = user.Region;
-            Country.Text = user.Country;
-            Zipcode.Text = "" + user.Zipcode;
+                FullName.Text = user.Fullname;
+                Email.Text = user.Email;
+                Password.Text = user.Password;
+                ContactNo.Text = "" + user.Contact_No;
+                Gender.Text = user.Gender;
+                HomeNo.Text = user.Home_No;
+                Street.Text = user.Street;
+                Barangay.Text = user.Barangay;
+                City.Text = user.City;
+                Municipality.Text = user.Municipality;
+                Region.Text = user.Region;
+                Country.Text = user.Country;
+                Zipcode.Text = "" + user.Zipcode;
+            }
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
             User user = userDB.Get((int)ViewState["User_ID"]);
 
+            user.User_ID = user.User_ID;
             user.Fullname = FullName.Text;
             user.Email = Email.Text;
             user.Contact_No = int.Parse(ContactNo.Text);
@@ -58,7 +62,7 @@ namespace ECommerceSystem.Account
 
             userDB.Update(user);
 
-            Response.Redirect("/");
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Changes saved!');", true);
         }
     }
 }

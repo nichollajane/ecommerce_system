@@ -30,10 +30,6 @@
                   <li><a href="/CategoryList.aspx" class="nav-link px-2 link-dark font-medium">Shop by Category</a></li>
                 </ul>
 
-                <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                  <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-                </div>
-
                 <div class="dropdown text-end">
                   <a href="#" class="d-block link-dark font-bold text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <asp:Label 
@@ -63,6 +59,15 @@
     </form>
 
     <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function handleEnterKeyPress(event, textbox) {
+            if (event.keyCode === 13) {
+                __doPostBack(textbox.id, '');
+                return false;
+            }
+        }
+    </script>
 
     <asp:ContentPlaceHolder ID="Scripts" runat="server">
     </asp:ContentPlaceHolder>

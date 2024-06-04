@@ -156,6 +156,16 @@ namespace ECommerceSystem.Database
 
                         decimal totalPrice = price * quantity;
 
+                        orderItem.Product_Name = reader["Product_Name"].ToString();
+                        orderItem.Product_Price = price;
+                        orderItem.Order_Quantity = (int)reader["Order_Quantity"];
+                        orderItem.Total_Price = totalPrice;
+
+                        byte[] bytes = (byte[])reader["Product_Image"];
+                        string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+                        orderItem.Product_Image_Url = "data:image/png;base64," + base64String;
+
                         orderItems.Add(orderItem);
                     }
                 }

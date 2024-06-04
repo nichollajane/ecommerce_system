@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="d-flex justify-content-between">
-                        <a href='/Account/CheckOut.aspx?Cart_ID=<%# Eval("Cart_ID") %>' class="btn btn-sm btn-success">
+                        <a href='/Account/CheckOut.aspx?Cart_ID=<%# Eval("Cart_ID") %>' class="btn btn-sm btn-primary">
                             Check Out
                         </a>
 

@@ -107,12 +107,12 @@ namespace ECommerceSystem.Account
 
                 cartDB.Delete(cart);
 
-                /** Models.Product product = new Models.Product();
+                Models.Product product = productDB.Get(orderItem.Product_ID);
+
                 product.Product_ID = orderItem.Product_ID;
                 product.Product_Quantity -= orderItem.Order_Quantity;
-                product.Product_SKU = product.Product_SKU;
 
-                productDB.Update(product); **/
+                productDB.Update(product);
             }
 
             Response.Redirect("~/Account/OrderList.aspx");
