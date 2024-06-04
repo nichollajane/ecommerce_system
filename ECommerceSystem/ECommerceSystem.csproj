@@ -350,7 +350,6 @@
       <DependentUpon>Customer.Master</DependentUpon>
     </Compile>
     <Compile Include="Database\CartDB.cs" />
-    <Compile Include="Database\CartItemDB.cs" />
     <Compile Include="Database\CategoryDB.cs" />
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\OrderDB.cs" />
@@ -373,7 +372,6 @@
     </Compile>
     <Compile Include="Helpers.cs" />
     <Compile Include="Models\Cart.cs" />
-    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderItem.cs" />

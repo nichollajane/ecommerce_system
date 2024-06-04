@@ -51,7 +51,6 @@ namespace ECommerceSystem
         protected void AddToCartButton_Click(object sender, EventArgs e)
         {
             CartDB cartDB = new CartDB();
-            CartItemDB cartItemDB = new CartItemDB();
 
             FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(Request.Cookies[FormsAuthentication.FormsCookieName].Value);
 

@@ -2,7 +2,7 @@
 
 namespace ECommerceSystem.Models
 {
-    public class Product
+    public class Product: Category
     {
         public int Product_ID { get; set; }
 
@@ -27,9 +27,5 @@ namespace ECommerceSystem.Models
         public String Product_Color { get; set; }
 
         public String Product_Size { get; set; }
-
-        public int Category_ID { get; set; }
-
-        public String Category_Name { get; set; }
     }
 }
